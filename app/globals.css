@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Este bloque asegura que no haya espacios blancos en los bordes */
-html, body {
+:root {
+  --background: #0f172a;
+  --foreground: #ffffff;
+}
+
+body {
+  background-color: #0f172a !important;
+  color: white !important;
   margin: 0;
-  padding: 0;
-  background-color: #0f172a; /* Fondo azul noche profesional */
-  color: white;
 }
