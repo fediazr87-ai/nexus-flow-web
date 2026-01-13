@@ -1,10 +1,5 @@
 import './globals.css'
 
-export const metadata = {
-  title: 'Nexus Flow',
-  description: 'Soluciones de Software',
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -12,7 +7,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className="bg-slate-900 antialiased text-white">
+        {children}
+      </body>
     </html>
   )
 }
