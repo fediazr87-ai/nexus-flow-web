@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link'; // <--- Importante para que las sub-páginas carguen rápido
 import { 
   Scissors, 
   Stethoscope, 
@@ -9,8 +10,6 @@ import {
   Instagram, 
   MessageCircle, 
   ArrowRight,
-  Globe,
-  ShieldCheck,
   Zap
 } from 'lucide-react';
 
@@ -109,9 +108,10 @@ export default function NexusFlowWeb() {
                 <div className="mb-6 group-hover:scale-110 transition-transform">{s.icon}</div>
                 <h3 className="text-2xl font-bold mb-4">{s.title}</h3>
                 <p className="text-slate-500 mb-8 leading-relaxed">{s.desc}</p>
-                <a href={s.link} className="flex items-center gap-2 font-bold text-blue-600 hover:gap-4 transition-all">
+                {/* Usamos Link en lugar de <a> para las sub-páginas internas */}
+                <Link href={s.link} className="flex items-center gap-2 font-bold text-blue-600 hover:gap-4 transition-all">
                   Saber más <ArrowRight className="w-5 h-5" />
-                </a>
+                </Link>
               </div>
             ))}
           </div>
@@ -138,7 +138,6 @@ export default function NexusFlowWeb() {
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a href="#" className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all">
-                   {/* Icono TikTok manual */}
                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path><line x1="12" y1="1" x2="12" y2="11"></line></svg>
                 </a>
               </div>
@@ -147,9 +146,9 @@ export default function NexusFlowWeb() {
             <div>
               <h4 className="text-white font-bold mb-6">Servicios</h4>
               <ul className="space-y-4">
-                <li><a href="/servicios/barberia" className="hover:text-blue-500">Barberías</a></li>
-                <li><a href="/servicios/medicina" className="hover:text-blue-500">Medicina</a></li>
-                <li><a href="/servicios/erp" className="hover:text-blue-500">ERP Corporativo</a></li>
+                <li><Link href="/servicios/barberia" className="hover:text-blue-500">Barberías</Link></li>
+                <li><Link href="/servicios/medicina" className="hover:text-blue-500">Medicina</Link></li>
+                <li><Link href="/servicios/erp" className="hover:text-blue-500">ERP Corporativo</Link></li>
               </ul>
             </div>
 
